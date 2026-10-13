@@ -18,7 +18,7 @@ Deploy: https://wonderful-puffpuff-6f8513.netlify.app/
 
 
 > El plan gratuito de Render duerme el servicio tras un tiempo sin uso: la primera petición puede tardar entre 30 y 60 segundos.
-
+> La creación y administración de vendedores se realiza directamente a través del panel de administración de Django (mas info en [Despliegue](#despliegue))
 
 [![Ver video en YouTube](https://img.youtube.com/vi/_SlsjfD5IUs/0.jpg)](https://youtu.be/_SlsjfD5IUs)
 
@@ -77,13 +77,12 @@ La creación y administración de vendedores se realiza directamente a través d
 2. Inicia sesión con las credenciales de superusuario:
    * **Usuario:** `admin`
    * **Contraseña:** `Pv18273645.`
-3. Ve a la sección de **Vendedores** (o *Usuarios* / *Perfiles*, según la estructura del modelo) y haz clic en **Añadir / Add**.
+3. Ve a la sección de **Vendedores** y haz clic en **Añadir / Add**.
 4. Completa los datos requeridos y guarda los cambios.
 
 ## Frontend en Netlify
 
 Deploy: https://wonderful-puffpuff-6f8513.netlify.app/
-
 
 
 ## Instalación y ejecución (local)
