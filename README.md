@@ -14,7 +14,9 @@
 </p>
 
 
-Deploy: https://wonderful-puffpuff-6f8513.netlify.app/Ventas
+Deploy: https://wonderful-puffpuff-6f8513.netlify.app/
+
+
 > El plan gratuito de Render duerme el servicio tras un tiempo sin uso: la primera petición puede tardar entre 30 y 60 segundos.
 
 
