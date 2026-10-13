@@ -15,6 +15,8 @@
 
 
 Deploy: https://wonderful-puffpuff-6f8513.netlify.app/Ventas
+> El plan gratuito de Render duerme el servicio tras un tiempo sin uso: la primera petición puede tardar entre 30 y 60 segundos.
+
 
 [![Ver video en YouTube](https://img.youtube.com/vi/_SlsjfD5IUs/0.jpg)](https://youtu.be/_SlsjfD5IUs)
 
@@ -25,7 +27,6 @@ Deploy: https://wonderful-puffpuff-6f8513.netlify.app/Ventas
 * [Funcionalidades](#funcionalidades)
 * [Reglas de comisión](#reglas-de-comisión)
 * [Instalación y ejecución](#instalación-y-ejecución)
-* [Variables de entorno](#variables-de-entorno)
 * [Despliegue](#despliegue)
 * [API](#api)
 * [Tecnologías utilizadas](#tecnologías-utilizadas)
@@ -54,9 +55,9 @@ Se aplica un único porcentaje según el total vendido por el vendedor en el ran
 
 | Total vendido | Porcentaje |
 |---|---|
-| >= 10 000 | 10% |
-| >= 5 000 | 7% |
-| >= 1 000 | 5% |
+| > 10 000 | 10% |
+| > 5 000 | 7% |
+| > 1 000 | 5% |
 | < 1 000 | 2% |
 
 Las reglas están en `commissions/services.py` (`COMMISSION_TIERS`).
@@ -107,31 +108,6 @@ El frontend queda disponible en `http://localhost:5173/`. Rutas:
 - `/ventas`: registrar una venta
 - `/comisiones`: consultar comisiones por rango de fechas
 
-### Configuración importante
-
-- **CORS:** el origen del frontend debe estar en `CORS_ALLOWED_ORIGINS` (por defecto `http://localhost:5173`).
-- **URL de la API:** se define en `src/api.js` y se puede sobrescribir con `VITE_API_URL`. Si no existe, usa `http://localhost:8000/api`.
-
-## Variables de entorno
-
-### Backend (Render)
-
-| Variable | Descripción |
-|---|---|
-| `SECRET_KEY` | Clave secreta de Django (generar una nueva para producción) |
-| `DEBUG` | `False` en producción |
-| `ALLOWED_HOSTS` | Dominios permitidos, separados por coma |
-| `DATABASE_URL` | URL de PostgreSQL. Sin ella se usa SQLite |
-| `CORS_ALLOWED_ORIGINS` | Orígenes del frontend, separados por coma, sin barra final |
-| `DJANGO_SUPERUSER_USERNAME` / `_EMAIL` / `_PASSWORD` | Para crear el superusuario en el build |
-
-### Frontend (Netlify)
-
-| Variable | Descripción |
-|---|---|
-| `VITE_API_URL` | URL base de la API, ej. `https://minicore-api-gch3.onrender.com/api` (sin `=` al inicio ni barra final) |
-
-Las variables `VITE_*` se incrustan al compilar: tras cambiarlas hay que volver a desplegar.
 
 ## Despliegue
 
@@ -156,7 +132,6 @@ Las variables `VITE_*` se incrustan al compilar: tras cambiarlas hay que volver 
   /*    /index.html   200
   ```
 
-> El plan gratuito de Render duerme el servicio tras un tiempo sin uso: la primera petición puede tardar entre 30 y 60 segundos.
 
 ## API
 
@@ -166,7 +141,7 @@ Prefijo base: `/api/`
 |---|---|---|
 | GET | `/api/vendedores/` | Listar vendedores |
 | POST | `/api/ventas/` | Crear una venta. Body: `{"Vendedor": 1, "cantidad": 250.5}` |
-| GET | `/api/comisiones/?desde=YYYY-MM-DD&hasta=YYYY-MM-DD` | Comisiones por vendedor en el rango |
+| GET | `/api/comisiones/?desdeYYYY-MM-DD&hastaYYYY-MM-DD` | Comisiones por vendedor en el rango |
 
 Ejemplo de respuesta de comisiones:
 
