@@ -4,7 +4,6 @@
   Aplicación web para registrar ventas y calcular las comisiones de los vendedores dentro de un rango de fechas.
 </p>
 
-Deploy: https://wonderful-puffpuff-6f8513.netlify.app/Ventas
 
 <p align="center">
   <img src="https://img.shields.io/badge/STATUS-EN%20DESARROLLO-green" alt="Estado: en desarrollo">
@@ -13,6 +12,11 @@ Deploy: https://wonderful-puffpuff-6f8513.netlify.app/Ventas
   <img src="https://img.shields.io/badge/DB-PostgreSQL-4169E1?logo=postgresql&logoColor=white" alt="PostgreSQL">
   <img src="https://img.shields.io/badge/Deploy-Render%20%2B%20Netlify-46E3B7" alt="Render y Netlify">
 </p>
+
+
+Deploy: https://wonderful-puffpuff-6f8513.netlify.app/Ventas
+
+[![Ver video en YouTube](https://img.youtube.com/vi/_SlsjfD5IUs/0.jpg)](https://youtu.be/_SlsjfD5IUs)
 
 ## Índice
 
